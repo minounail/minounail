@@ -1,0 +1,199 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="Shortcut Icon" type="image/x-icon" href="絕對位址/相對位址" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"></script>
+
+    <title>Minou nail salon Taiwan</title>
+</head>
+<body>
+    <!--include navbar-->
+    <div w3-include-html="navbar.html"></div>
+
+    <!--商品列表-->
+    <div class="container custom-container-width" id="order">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb my-3">
+                <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                <li class="breadcrumb-item active" aria-current="page">訂單查詢</li>
+            </ol>
+        </nav>
+        <table class="table table-bordered" id="orderlist">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-left">商品名稱</th>
+                    <th scope="col">數量</th>
+                    <th scope="col">小計</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>201904月份【春漾限定】彩繪款式</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">NT$3,500</td>
+                </tr>
+                <tr>
+                    <td>201904月份【春漾限定】彩繪款式</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">NT$3,500</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>購買日期</th>
+                            <th>訂單編號</th>
+                            <th>總金額</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr>
+                            <td>2019/04/25</td>
+                            <td>ABC00000000</td>
+                            <td>NT$7,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>付款方式</th>
+                            <th>運送方式</th>
+                            <th>付款結果</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr>
+                            <td>信用卡線上刷卡</td>
+                            <td>到店使用</td>
+                            <td class="text-danger">尚未付款</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="border text-right mb-3" id="orderinfo">
+            <ul class="list-unstyled m-3">
+                <li>訂購人姓名：ＸＸＸ<!--顯示訂購人姓名--></li>
+                <li>訂購人電話：09XX-XXXXXX<!--顯示訂購人電話--></li>
+                <li>訂購人信箱：xxxxxx@gmail.com<!--顯示訂購人信箱--></li>
+                <li>備註：<!--顯示備註事項--></li>
+            </ul>
+        </div>
+        <div class="border text-right" id="orderinfo">
+            <ul class="list-unstyled m-3">
+                <li>對訂單有任何問題？</li>
+                <li><a href="mailto:consumer@minounail.com">歡迎來信至客服，我們在此協助您 <span class="fa fa-envelope" aria-hidden="true"></span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--訂單查詢頁廣告 1000x260-->
+    <div class="container custom-container-width d-none d-md-block mt-3" id="orderbn">
+        <a href="">
+            <img src="images/1000x260.jpg" class="w-100" alt="">
+        </a>
+    </div>
+
+    <!--訂單查詢頁廣告M 600x260-->
+    <div class="container custom-container-width d-block d-md-none mt-3" id="orderbn">
+        <a href="">
+            <img src="images/600x260.jpg" class="w-100" alt="">
+        </a>
+    </div>
+
+    <!--include footer-->
+    <div w3-include-html="footer.html"></div>
+
+    <!--include JS-->
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
+                            }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "Page not found.";
+                            }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+	<script>
+	    includeHTML();
+	</script>
+    	
+    <!--BACK TO TOP按鈕-->
+    <script type='text/javascript'>
+        $(function() {
+            $('#BackTop').click(function() {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 333);
+            });
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('#BackTop').fadeIn(222);
+                } else {
+                    $('#BackTop').stop().fadeOut(222);
+                }
+            }).scroll();
+        });
+    </script>
+    
+    <!--hover換字js-->
+    <script type='text/javascript'>
+        var as = document.getElementsByClassName('nav-link');
+        for (i = 0; i < as.length; i++) {
+            as[i].onmouseover = function() {
+                console.log('this, this')
+                c = this.innerHTML;
+                this.innerHTML = this.title;
+                this.title = c;
+            }
+            as[i].onmouseout = function() {
+                c = this.innerHTML;
+                this.innerHTML = this.title;
+                this.title = c;
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

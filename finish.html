@@ -1,0 +1,127 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="minou nail, minou nail 美甲,minou nail光療美甲,minou nail凝膠美甲,minou nail salon,minou nail 手部保養,minou nail 足部保養,Margaret Dabbs London , Bambi wink , VMV , vmvhypoallergenics">
+    <meta property="og:image" content="images/Logo_1.svg">
+    <meta property="og:url" content="https://www.minounail.com">
+    <meta property="og:site_name" content="Minou nail salon Taiwan">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"></script>
+
+    <title>Minou nail salon Taiwan</title>
+</head>
+<body>
+    <!--include footer-->
+    <div w3-include-html="navbar.html"></div>
+
+    <!--商品列表-->
+    <div class="container custom-container-width text-center" id="finish">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb my-3">
+                <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                <li class="breadcrumb-item active" aria-current="page">購物完成</li>
+            </ol>
+        </nav>
+        <h1>NICE TO MEET YOU!</h1>
+        <p>
+            以生活態度美學為品牌核心<br>
+            從展現舒適優雅的小細節為出發點<br>
+            舉手投足間充滿細節美感<br>
+            Minou 讓您每一天都心情愉悅！
+        </p>
+        <p>
+            商品訂購完成<br>
+            你的訂單編號是 PO2E7D90004793<br>
+            歡迎您隨時到站上查詢訂單資訊!
+        </p>
+        <a href=""><img src="images/finish_bn.jpg" alt="" class="w-100"></a>
+        <p>Thank you for being one part of minou nail.</p>
+    </div>
+
+    <!--include footer-->
+    <div w3-include-html="footer.html"></div>
+
+    <!--include JS-->
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
+                            }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "Page not found.";
+                            }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+	<script>
+	    includeHTML();
+	</script>
+    	
+    <!--BACK TO TOP按鈕-->
+    <script type='text/javascript'>
+        $(function() {
+            $('#BackTop').click(function() {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 333);
+            });
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('#BackTop').fadeIn(222);
+                } else {
+                    $('#BackTop').stop().fadeOut(222);
+                }
+            }).scroll();
+        });
+    </script>
+    
+    <!--hover換字js-->
+    <script type='text/javascript'>
+        var as = document.getElementsByClassName('nav-link');
+        for (i = 0; i < as.length; i++) {
+            as[i].onmouseover = function() {
+                console.log('this, this')
+                c = this.innerHTML;
+                this.innerHTML = this.title;
+                this.title = c;
+            }
+            as[i].onmouseout = function() {
+                c = this.innerHTML;
+                this.innerHTML = this.title;
+                this.title = c;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="minou nail, minou nail 美甲,minou nail光療美甲,minou nail凝膠美甲,minou nail salon,minou nail 手部保養,minou nail 足部保養,Margaret Dabbs London , Bambi wink , VMV , vmvhypoallergenics">
+    <meta property="og:image" content="images/Logo_1.svg">
+    <meta property="og:url" content="https://www.minounail.com">
+    <meta property="og:site_name" content="Minou nail salon Taiwan">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="shortcut icon" href="images/Logo_1.svg" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"></script>
+
+    <title>Minou nail salon Taiwan</title>
+</head>
+<body>
+    <!--include navbar-->
+    <div w3-include-html="navbar.html"></div>
+
+    <!--首頁Landing Page區塊-->
+    <div class="container custom-container-width" id="indexlnpg">
+        <!--Landing Page 內容start-->
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/ld01.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/ld02.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/ld03.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <a href=""><img src="images/ld04.jpg" alt="" class="w-100"></a>
+        <div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/cLlgOWf8FOU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <!--Landing Page 內容end-->
+    </div>
+
+    <!--include footer-->
+    <div w3-include-html="footer.html"></div>
+
+    <!--include JS-->
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
+                            }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "Page not found.";
+                            }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+	<script>
+	    includeHTML();
+	</script>
+    
+    <!--BACK TO TOP按鈕-->
+    <script type='text/javascript'>
+        $(function() {
+            $('#BackTop').click(function() {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 333);
+            });
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('#BackTop').fadeIn(222);
+                } else {
+                    $('#BackTop').stop().fadeOut(222);
+                }
+            }).scroll();
+        });
+    </script>
+
+    <!--hover換字js-->
+    <script type='text/javascript'>
+        var as = document.getElementsByClassName('nav-link');
+        for (i = 0; i < as.length; i++) {
+            as[i].onmouseover = function() {
+                console.log('this, this')
+                c = this.innerHTML;
+                this.innerHTML = this.title;
+                this.title = c;
+            }
+            as[i].onmouseout = function() {
+                c = this.innerHTML;
+                this.innerHTML = this.title;
+                this.title = c;
+            }
+        }
+    </script>
+    
+</body>
+
+</html>
